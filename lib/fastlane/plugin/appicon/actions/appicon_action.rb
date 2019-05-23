@@ -42,7 +42,8 @@ module Fastlane
         require 'mini_magick'
         image = MiniMagick::Image.open(fname)
 
-        Helper::AppiconHelper.check_input_image_size(image, 1024)
+        # Skip input image size check (for allowing vector images)
+        # Helper::AppiconHelper.check_input_image_size(image, 1024)
 
         # Convert image to png
         image.format 'png'
